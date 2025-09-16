@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- Left Side: Logo -->
+    <a class="navbar-brand" href="#">
+      <!-- <img src="assets/mtb-logo.png" alt="MTB Logo" class="logo" /> -->
+      <span class="logo-text">MTB</span>
+    </a>
+
+    <!-- Toggler for mobile view -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Middle: Navigation Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        @for (item of navItems; track $index) {
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="item.route" routerLinkActive="active">{{
+            item.name
+          }}</a>
+        </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Right Side: Login/Signup Buttons -->
+    <div class="d-flex">
+      <button class="btn btn-outline-primary me-2" routerLink="/login">Login</button>
+      <button class="btn btn-primary" routerLink="/signup">Sign Up</button>
+    </div>
+  </div>
+</nav>
